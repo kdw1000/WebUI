@@ -16,17 +16,17 @@ Overview page with the current system status and the addresses of all IP interfa
 
 ![Menü: System > System identification](https://ssv-comm.de/forum/bilder/938-system_1.png) 
 
-In dieser Webseite des SSV/WebUI sind verschiedene Eigenschaften zur Gateway-Identifikation zusammengefasst.
+This web page of the SSV/WebUI summarizes various properties for gateway identification.
 
-**Host name:** Eingabe eines beliebigen Namens, um ein bestimmtes Gateway sicher identifizieren zu können.
+**Host name:** Input of an arbitrary name to be able to identify a certain gateway reliably.
 
-**Location:** Eingabe der Standortinformationen bzw. Angaben, um den Installationsort eines bestimmten Gateways zu finden.
+**Location:** Enter the location information or details to find the installation location of a specific gateway.
 
-**Contact:** E-Mail-Adresseingabe, um den zuständigen Betreuer des Gateways erreichen zu können. 
+**Contact:** E-mail address input to be able to reach the responsible person in charge of the gateway.
 
-**Serial number:** Voreingestellte Seriennummer des Gateways. Über diese Nummer lassen sich Rückfragen zur Produktionswoche, Werkseinstellungen, Auslieferung usw. mit Hilfe der Herstellerdatenbank beantworten.
+**Serial number:** Preset serial number of the gateway. This number can be used to answer queries about the production week, factory settings, delivery, etc. with the help of the manufacturer database.
 
-**Identify device through front LED:** Ein Druck auf die Flash-Schaltfläche bewirkt, dass eine der Frontplatten-LEDs des Gateways ca. 5 Sekunden lang blinkt. Dadurch lässt sich ein bestimmtes Gateway visuell identifizieren.
+**Identify device through front LED:** Pressing the flash button causes one of the gateway's front panel LEDs to flash for approx. 5 seconds. This allows a specific gateway to be visually identified.
 
 ## 2.2 System > System management 
 
