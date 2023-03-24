@@ -32,23 +32,23 @@ This web page of the SSV/WebUI summarizes various properties for gateway identif
 
 ![Menü: System > System management](https://ssv-comm.de/forum/bilder/938-system_2.png) 
 
-Über die hier zusammengefassten Funktionen lassen sich ein Systemneustart (Reboot) erzwingen und die Konfigurationseinstellungen vervielfältigen bzw. in den werksseitigen Ausgangszustand zurücksetzen.
+The functions summarized here can be used to force a system restart (reboot) and to duplicate the configuration settings or reset them to the factory default state.
 
-**Reboot system:** Das Betriebssystem des Gateways wird heruntergefahren. Anschließend erfolgt ein Neustart. Die WebUI-Sitzung muss anschließend neu gestartet werden. Durch diese Aktion gehen unter Umständen nicht gespeicherte Einstellungen verloren.
+**Reboot system:** The gateway's operating system is shut down. This is followed by a reboot. The WebUI session must then be restarted. This action may cause the loss of unsaved settings.
 
-**Configuration download:** Die auf diesem Gateway per Web/UI eingestellte Konfiguration kann mit dieser Funktion als Datei zum PC heruntergeladen und gespeichert werden.
+**Configuration download:** The configuration set on this gateway via Web/UI can be downloaded as a file to the PC and saved using this function.
 
-**Configuration upload:** Eine auf dem PC gespeicherte Datei mit Konfigurationseinstellungen kann zum Gateway hochgeladen werden, um die Einstellungen aus der Datei zu übernehmen. ***Achtung: Durch diese Aktion gehen Ihre Gateway-Einstellungen verloren. Sie werden durch die hochgeladene Datei überschrieben. Dadurch können Sie sich für weitere Zugriffe aus dem SSV/WebUI aussperren.*** 
+**Configuration upload:** A configuration settings file saved on the PC can be uploaded to the gateway to apply the settings from the file. ***Caution: This action will cause your gateway settings to be lost. They will be clobbered by the uploaded file. This may lock you out of the SSV/WebUI for further access.***
 
-**Configuration reset:** Ermöglicht das Rücksetzen der von Ihnen per SSV/WebUI vorgenommenen Einstellungen in den werkseitig voreingestellten Zustand. Details zur werkseitig voreingestellten IP-Adresse usw. finden Sie im *Handbuch Remote Maintenance Gateway RMG/938 - First Steps*, siehe https://ssv-comm.de/forum/dokumente/RMG938_FS_A.pdf.
+**Configuration reset:** Allows you to reset the settings you made via SSV/WebUI to the factory default state. For details on the factory default IP address, etc., refer to the *Remote Maintenance Gateway RMG/938 - First Steps* manual (https://ssv-comm.de/forum/dokumente/RMG938_FS_A.pdf).
 
 ## 2.3 System > Firmware update 
 
 ![Menü: System > Firmware update](https://ssv-comm.de/forum/bilder/938-system_3.png) 
 
-**Firmware info:** In diesem Bereich werden Ihnen die aktuelle Firmware-Version sowie ein Hash-Wert für Integritätsprüfungen zum installierten Firmware-Image angezeigt. 
+**Firmware info:** This area shows you the current firmware version and a hash value for integrity checks on the installed firmware image. 
 
-**Firmware update configuration:** Ihr Gateway unterstützt verschiedene Remote-Update-Möglichkeiten. Dabei werden einzelne Softwarekomponenten oder sogar eine vollständig neue Firmware von einem vertrauenswürdigen Server heruntergeladen und installiert. Software-Updates sind eine kritische Angelegenheit. Kontaktieren Sie im Zweifelsfall vor einem Update unseren Support.
+**Firmware update configuration:** Your gateway supports various remote update options. This involves downloading and installing individual software components or even a completely new firmware image from a trusted server. Software updates are a critical matter. In case of doubt, contact our support before performing an update.
 
 ## 2.4 System > App management 
 
