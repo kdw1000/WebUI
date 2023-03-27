@@ -38,7 +38,7 @@ The functions summarized here can be used to force a system restart (reboot) and
 
 **Configuration download:** The configuration set on this gateway via Web/UI can be downloaded as a file to the PC and saved using this function.
 
-**Configuration upload:** A configuration settings file saved on the PC can be uploaded to the gateway to apply the settings from the file. ***Caution: This action will cause your gateway settings to be lost. They will be clobbered by the uploaded file. This may lock you out of the SSV/WebUI for further access.***
+**Configuration upload:** A configuration settings file saved on the PC can be uploaded to the gateway to apply the settings from the file. ***Caution: This action will cause your gateway settings to be lost. They will be overwritten by the uploaded file. This may lock you out of the SSV/WebUI for further access.***
 
 **Configuration reset:** Allows you to reset the settings you made via SSV/WebUI to the factory default state. For details on the factory default IP address, etc., refer to the *Remote Maintenance Gateway RMG/938 - First Steps* manual (https://ssv-comm.de/forum/dokumente/RMG938_FS_A.pdf).
 
@@ -72,109 +72,109 @@ The functions of the gateway can be extended via special apps. Most apps are ava
 
 ![Menü: System > COM ports](https://ssv-comm.de/forum/bilder/938-system_6.png) 
 
-Die seriellen Schnittstellen des Gateways lassen sich für unterschiedliche Anwendungen universell nutzen. Über diese Webseite des SSV/WebUI können Sie einzelne Schnittstellen für den Betrieb als serielle Konsole (Remote console) oder als „Com port redirector“ reservieren. Durch eine solche Reservierung steht die jeweilige Schnittstelle nicht mehr für andere Anwendungen zur Verfügung.
+The serial interfaces of the gateway can be used universally for different applications. Via this web page of the SSV/WebUI, you can reserve individual interfaces for operation as a serial console (remote console) or as a "Com port redirector". By such a reservation the respective interface is no longer available for other applications.
 
-Bitte beachten: Der COM1-Port dieses Gateways befindet sich innerhalb des Gehäuses. Er ist von außen nicht zugänglich. Diese Schnittstelle ist fix als serielle Konsole für Servicezwecke vorgesehen. Eine andere Verwendung ist nicht möglich. Für die weiteren Schnittstellen gibt es drei Optionen:
+Please note: The COM1 port of this gateway is located inside the housing. It is not accessible from the outside. This interface is fixed as a serial console for service purposes. Any other use is not possible. There are three options for the other interfaces:
 
-**None:** Die serielle Schnittstelle kann durch beliebige Anwendungen genutzt werden, z. B. unter Node-RED für die Modbus-basierte Kommunikation mit externen Baugruppen. 
+**None:** The serial interface can be used by any application, e.g. by Node-RED for Modbus-based communication with external modules. 
 
-**Remote console:** Die jeweilige serielle Schnittstelle bildet eine Konsole für die Kommunikation mit dem Linux-Betriebssystem. Beachten Sie bitte, dass für die Benutzung eine Anmeldung mit Benutzername und Passwort erforderlich ist.
+**Remote console:** The respective serial port forms a console for communication with the Linux operating system. Please note that a login with user name and password is required for the use.
 
-**Com port redirector:** Diese Funktion bildet einen Protokollkonverter zwischen den IP-basierten Transportprotokollen UDP oder TCP, die z. B. für die LAN-Schnittstellen zur Verfügung stehen, und der jeweils zugewiesenen seriellen Schnittstelle. Die UPD bzw. TCP-Seite kann wahlweise im Client- oder Servermodus betrieben werden. 
+**Com port redirector:** This function forms a protocol converter between the IP-based transport protocols UDP or TCP, which are available e.g. for the LAN interfaces, and the respective assigned serial port. The UPD or TCP side can optionally be operated in client or server mode. 
 
 ## 2.7 System > Watchdog 
 
 ![Menü: System > Watchdog](https://ssv-comm.de/forum/bilder/938-system_7.png)
 
-Ihr Gateway verfügt über verschiedene Wachdog-Zeitgeber bzw. Watchdog-Zähler, die einen möglichst störungsfreien 24/7-Betrieb gewährleisten sollen. Für diese Watchdogs stehen individuelle Konfigurationseinstellmöglichkeiten zur Verfügung.
+Your gateway has various watchdog timers or watchdog counters that are intended to ensure the most trouble-free 24/7 operation possible. Individual configuration setting options are available for these watchdogs.
 
-**Enable watchdog service:** Watchdog-Dienste des Gateways ein- oder ausschalten.
+**Enable watchdog service:** Enable or disable watchdog services of the gateway.
 
-**Enable default watchdog:** Die hier aufgeführten einzelnen Watchdogs mit den werksseitigen Default-Einstellungen aktivieren.
+**Enable default watchdog:** Activate the individual watchdogs listed here with the factory default settings.
 
-**Reboot interval:** Einstellen einer Zeitspanne, nach der automatisch ein Reboot des Gateways ausgelöst wird. Durch den Gateway-Reboot werden alle Systemprozesse in einen (definierten) Ausgangszustand gesetzt.  
+**Reboot interval:** Set a time interval after which a gateway reboot is automatically triggered. The gateway reboot sets all system processes to a (defined) initial state.  
 
-Ein typischer Anwendungsfall für dieses Gateway ist der Betrieb als VPN-Client in einer Fernwartungsanwendung. Dafür ist es je nach Konfiguration wichtig, dass eine dauerhafte VPN-Verbindung zu einem externen VPN-Server existiert. Wird diese VPN-Verbindung durch irgendwelche Störungen unterbrochen, muss das Gateway automatisch versuchen, den Server erneut zu erreichen. Mit den folgenden beiden Einstellmöglichkeiten lässt sich ein Gateway-Reboot erzeugen, wenn innerhalb einer bestimmten Zeit keine VPN-Serververbindung zu Stande gekommen ist oder eine bestimmte Zeit lang keine VPN-Verbindung mehr existiert.
+A typical use case for this gateway is operation as a VPN client in a remote maintenance application. For this, depending on the configuration, it is important that a permanent VPN connection to an external VPN server exists. If this VPN connection is interrupted by any malfunctions, the gateway must automatically try to reach the server again. The following two setting options can be used to generate a gateway reboot if no VPN server connection is established within a certain time or if no VPN connection exists for a certain time.
 
-**VPN1: Start delay:** Überwachen, ob innerhalb einer bestimmten Zeit eine VPN-Verbindung zu Stande kommt. Das Gateway kann nach jedem Bootvorgang automatisch einen VPN-Server kontaktieren, um sich als Client in ein VPN zu integrieren. Klappt diese Integration nicht innerhalb der hier festgelegten Zeit, wird ein Gateway-Reboot erzeugt.
+**VPN1: Start delay:** Monitoring whether a VPN connection is established within a certain time. The gateway can automatically contact a VPN server after each boot process in order to integrate itself as a client in a VPN. If this integration does not work within the time specified here, a gateway reboot is generated.
 
-**VPN1: Offline delay:** Überwachen, wie lange bereits keine VPN-Verbindung zu einem externen Server existiert. Wurde eine VPN-Verbindung zum Server unterbrochen und ist keine neue Verbindung zu Stande gekommen, wird nach Ablauf der hier voreingestellt Zeit ein Reboot erzeugt.
+**VPN1: Offline delay:** Monitoring how long no VPN connection to an external server has existed. If a VPN connection to the server has been interrupted and no new connection has been established, a reboot is generated after the time preset here has elapsed.
 
-Ein Gateway unterhält in vielen Anwendungsfällen gleichzeitig lokale Verbindungen zu anderen Systemen sowie verschiedene externe Verbindungen ins Internet  (s. g. WAN-Verbindungen = Wide Area Network-Verbindungen), z. B. zu einem Zeitserver und weiteren speziellen Cloud- und IoT-Serviceplattformen. WAN-Verbindungen sind deutlich störungsanfälliger als eine lokale Verbindung. Über die folgenden drei Einstellmöglichkeiten lässt sich eine Datenmengen-basierte WAN-Zustandsüberwachung konfigurieren, um im Störungsfall einen automatischen Restart der WAN-Schnittstellen-Hardware auszulösen (beispielsweise ein Reset für das interne Mobilfunkmodem).
+In many use cases, a gateway simultaneously maintains local connections to other systems as well as various external connections to the Internet (so-called WAN connections = Wide Area Network connections), e.g., to a time server and other special cloud and IoT service platforms. WAN connections are much more vulnerable to interference than a local connection. The following three setting options can be used to configure data volume-based WAN condition monitoring to trigger an automatic restart of the WAN interface hardware In case of malfunction (for example, a reset for the internal cellular modem).
 
-**WAN: Traffic threshold:** Anzahl der Bytes pro Minute, die mindestens aus dem WAN in Richtung Gateway übertragen werden müssen, wenn eine funktionierende WAN-Verbindung existiert. Dieser Schwellwert legt fest, ob die WAN-Verbindung als OK oder kritisch (unbestimmt) eingestuft wird. (Achtung: Diese Funktion ist nur für Gateways mit einem internen Mobilfunkmodem sinnvoll nutzbar)
+**WAN: Traffic threshold:** Number of bytes per minute that must at least be transferred from the WAN in the direction of the gateway if a functioning WAN connection exists. This threshold determines whether the WAN connection is classified as OK or critical (undetermined). (Attention: This function is only useful for gateways with an internal cellular modem)
 
-**WAN: Start delay:** Zeitspanne, innerhalb welcher nach einem Gateway-Bootvorgang die per Schwellwert (siehe *Traffic threshold*) festgelegte Anzahl Bytes pro Minute erreicht werden muss. Ansonsten wird nach Ablauf der hier voreingestellten Zeit ein WAN-Schnittstellen-Hardware-Restart erzeugt. (Achtung: Diese Funktion ist nur für Gateways mit einem internen Mobilfunkmodem sinnvoll nutzbar).
+**WAN: Start delay:** Time period within which the number of bytes per minute specified by the threshold value (see Traffic threshold) must be reached after a gateway boot process. Otherwise a WAN interface hardware restart is generated after the time preset here has elapsed. (Attention: This function is only useful for gateways with an internal mobile modem)
 
-**WAN: Idle delay:** Zeitspanne, die maximal vergehen darf, ohne dass die per Schwellwert (siehe *Traffic threshold*) festgelegte Anzahl Bytes pro Minute erreicht werden muss. Ansonsten wird nach Ablauf der hier voreingestellten Zeit ein WAN-Schnittstellen-Hardware-Restart erzeugt. (Achtung: Diese Funktion ist nur für Gateways mit einem internen Mobilfunkmodem sinnvoll nutzbar).
+**WAN: Idle delay:** Maximum time that may elapse without reaching the number of bytes per minute specified by the threshold (see Traffic threshold). Otherwise a WAN interface hardware restart is generated after the time preset here has elapsed. (Attention: This function is only useful for gateways with an internal mobile modem)
 
-**Mobile: reset count:** Diese Funktion ist nur für Gateways mit einem internen Mobilfunkmodem vorgesehen.
+**Mobile: reset count:** This function is only for gateways with an internal cellular modem.
 
-**Mobile: reboot count:** Diese Funktion ist nur für Gateways mit einem internen Mobilfunkmodem vorgesehen.
+**Mobile: reboot count:** This function is only intended for gateways with an internal cellular modem.
 
 ## 2.8 System > Logging 
 
 ![Menü: System > Logging](https://ssv-comm.de/forum/bilder/938-system_8.png)
 
-Das Gateway erzeugt zur Laufzeit eine Logging-Datei mit umfangreichen Einträgen. Sie dient zur Diagnose bzw. Ursachensuche bei Auffälligkeiten im Systemverhalten und anderen Ereignissen. Die Logging-Datei wird bei jedem Gateway-Bootvorgang neu erzeugt und geht beim Ausschalten der Versorgungsspannung verloren. 
+The gateway generates a logging file with extensive entries at runtime. It is used for diagnostics and for finding the cause of striking system behavior and other events. The logging file is regenerated with every gateway boot process and is lost when the supply voltage is switched off.
 
-**Download log file:** Mit dieser Funktion können Sie die Logging-Datei zu Ihrem PC herunterladen und dort speichern.
+**Download log file:** This function allows you to download the logging file to your PC and save it there.
 
-**Download service startup graph:** Über diese Eigenschaft können Sie eine Grafik mit einer Übersicht zum Start einzelner Systemdienste zum PC herunterladen und dort speichern. 
+**Download service startup graph:** Using this feature you can download a graph with an overview of the startup of individual system services to the PC and save it there. 
 
 ## 3.1 Network > WAN 
 
 ![Menü: Network > WAN](https://ssv-comm.de/forum/bilder/938-network_1.png)
 
-Ein Gateway unterhält in vielen Anwendungsfällen gleichzeitig lokale Verbindungen zu anderen Systemen sowie verschiedene externe Verbindungen ins Internet (s. g. WAN-Verbindungen = Wide Area Network-Verbindungen), z. B. zu einem Zeitserver und weiteren speziellen Cloud- und IoT-Serviceplattformen. WAN-Verbindungen sind deutlich störungsanfälliger als lokale Verbindungen. Über die folgende Einstellmöglichkeit lässt sich eine Ping-basierte WAN-Zustandsüberwachung (Ping-Watchdog) konfigurieren, um im Störungsfall eine andere physikalische Gateway-Schnittstelle als WAN-Schnittstelle auszuwählen (*WAN fallback interface*, beispielsweise LAN2 statt LAN1).
+In many use cases, a gateway simultaneously maintains local connections to other systems as well as various external connections to the Internet (so-called WAN connections = Wide Area Network connections), e.g., to a time server and other special cloud and IoT service platforms. WAN connections are much more susceptible to disturbances than local connections. The following setting option can be used to configure ping-based WAN status monitoring (ping watchdog) in order to select a different physical gateway interface as the WAN interface in the event of a disturbance (WAN fallback interface, for example LAN2 instead of LAN1).
 
-**WAN configuration:** Auswahl einer Gateway-Schnittstelle für die WAN-Verbindung (es können nur IP-fähige Schnittstellen ausgewählt werden, z. B. LAN1).
+**WAN configuration:** Selection of a gateway interface for the WAN connection (only IP-capable interfaces can be selected, e.g. LAN1).
 
-**WAN watchdog:** Hier lässt sich der Ping-Watchdog für die WAN-Schnittstelle aktivieren. Zum Aktivieren muss eine Ping-Test-Intervallzeit ausgewählt werden (z. B. jeweils ein Ping-Test alle 15 Minuten). Des Weiteren ist der DNS-Name oder die IP-Adresse des Systems auszuwählen, das per Ping-Test über die WAN-Schnittstelle erreicht werden soll. Zusätzlich lässt sich die auszuführende Aktion für den Fehlerfall des Ping-Tests festlegen (siehe *WAN fallback interface*). 
+**WAN watchdog:** Here the ping watchdog for the WAN interface can be activated. To activate it, a ping test interval time must be selected (e.g. one ping test every 15 minutes). Furthermore, the DNS name or the IP address of the system that is to be reached via the WAN interface by ping test must be selected. In addition, the action to be performed in the event of an error in the ping test can be defined (see *WAN fallback interface*).
 
 ## 3.2 Network > LAN1 
 
 ![Menü: Network > LAN1](https://ssv-comm.de/forum/bilder/938-network_2.png)
 
-**Interface configuration for LAN1:** Ein- oder ausschalten der LAN1-Schnittstelle.
+**Interface configuration for LAN1:** Enable or disable the LAN1 interface.
 
-**IPv4 address configuration:** In dieser Gruppe sind die IPv4- Adresseinstellmöglichkeiten für die LAN1-Schnittstelle zusammengefasst. Sie können zwischen einer automatischen IP-Adressvergabe per DHCP oder der manuellen Adresseingabe wählen. Beachten Sie bitte, dass der LAN1-Schnittstelle mehr als eine IP-Adresse zugewiesen werden kann. 
+**IPv4 address configuration:** This group contains the IPv4 address setting options for the LAN1 interface. You can choose between automatic IP address assignment via DHCP or manual address entry. Please note that more than one IP address can be assigned to the LAN1 interface. 
 
-**IPv6 address configuration:** Hier sind IPv6-Adresseinstellmöglichkeiten für die LAN1-Schnittstelle zusammengefasst. Analog zur IPv4-Adressvergabe ist eine automatische Adresszuweisung per DHCP oder die manuelle Adresseingabe von IPv6-Adressen möglich.
+**IPv6 address configuration:** IPv6 address setting options for the LAN1 interface are summarized here. Analogous to IPv4 address assignment, automatic address assignment via DHCP or manual address entry of IPv6 addresses is possible.
 
-**Expert configurations:** Unter diesem Oberbegriff stehen verschiedene „Experten-Einstellungen“ zur Verfügung. Veränderungen sollten nur durch entsprechend geschultes Fachpersonal vorgenommen werden. Einen Sonderfall bildet *Enable UPnP discovery* (UPnP = Universal Plug and Play). Ist diese Funktion eingeschaltet, können Sie mit einem UPnP-fähigen Gerät das Gateway in einem lokalen Netzwerk suchen, ohne die IP-Adresse der LAN1-Schnittstelle zu kennen. 
+**Expert configurations:** Various "expert settings" are available under this generic term. Changes should only be made by appropriately trained specialist personnel. Enable UPnP discovery (UPnP = Universal Plug and Play) is a special case. If this function is enabled, you can search for the gateway in a local network with a UPnP-capable device without knowing the IP address of the LAN1 interface. 
 
 ## 3.3 Network > LAN2 
 
 ![Menü: Network > LAN2](https://ssv-comm.de/forum/bilder/938-network_3.png)
 
-**Interface configuration for LAN2:** Ein- oder ausschalten der LAN2-Schnittstelle.
+**Interface configuration for LAN2:** Enable or disable the LAN2 interface.
 
-**IPv4 address configuration:** In dieser Gruppe sind die IPv4-Adresseinstellmöglichkeiten für die LAN2-Schnittstelle zusammengefasst. Sie können zwischen einer automatischen IP-Adressvergabe per DHCP oder der manuellen Adresseingabe wählen. Beachten Sie bitte, dass der LAN2-Schnittstelle mehr als eine IP-Adresse zugewiesen werden kann.  
+**IPv4 address configuration:** This group contains the IPv4 address setting options for the LAN2 interface. You can choose between automatic IP address assignment via DHCP or manual address entry. Please note that more than one IP address can be assigned to the LAN2 interface.  
 
-**IPv6 address configuration:** Hier sind IPv6-Adresseinstellmöglichkeiten für die LAN2-Schnittstelle zusammengefasst. Analog zur IPv4-Adressvergabe ist eine automatische Adresszuweisung per DHCP oder die manuelle Adresseingabe von IPv6-Adressen möglich.
+**IPv6 address configuration:** IPv6 address setting options for the LAN2 interface are summarized here. Analogous to IPv4 address assignment, automatic address assignment via DHCP or manual address entry of IPv6 addresses is possible.
 
-**Expert configurations:** Unter diesem Oberbegriff stehen verschiedene „Experten-Einstellungen“ zur Verfügung. Veränderungen sollten nur durch entsprechend geschultes Fachpersonal vorgenommen werden. 
+**Expert configurations:** Various "expert settings" are available under this generic heading. Changes should only be made by appropriately trained specialists. 
 
 ## 3.4 Network > Bluetooth 
 
 ![Menü: Network > Bluetooth](https://ssv-comm.de/forum/bilder/938-network_4.png)
 
-**General configuration:** Die Bluetooth Low Energy (BLE) Schnittstelle des Gateways lässt sich ein- und ausschalten.
+**General configuration:** The Bluetooth Low Energy (BLE) interface of the gateway can be switched on and off.
 
 ## 3.5 Network > Firewall and NAT 
 
 ![Menü: Network > Firewall and NAT](https://ssv-comm.de/forum/bilder/938-network_5.png)
 
-Ihr Gateway besitzt ein komplexes Firewall-System, mit dem sich der Datenverkehr aller vorhandenen IP-Schnittstellen überwachen und filtern lässt. Die Einstellmöglichkeiten sind sehr umfangreich. Wenn Sie die Firewall nutzen wollen, ist auf jeden Fall ein entsprechend geschulter Experte für die Einstellungen erforderlich. Alternativ können Sie sich auch jederzeit an unseren Support wenden.
+Your gateway has a complex firewall system that can be used to monitor and filter the data traffic of all existing IP interfaces. The setting options are very extensive. If you want to use the firewall, an appropriately trained expert is definitely required for the settings. You can alternatively contact our support at any time.
 
-Beachten Sie bitte, dass die Gateway-Firewall sowohl IPv4 als auch IPv6 unterstützt. Für beide IP-Protokollvarianten sind aber in jedem Fall jeweils eigene Regeln erforderlich.
+Please note that the gateway firewall supports both IPv4 and IPv6. However, both IP protocol variants require their own rules in each case.
 
-**Firewall configuration:** In diesem Bereich können Sie sich die aktuellen Firewall-Regeln anzeigen lassen und eine Log-Datei für Firewall-Diagnoseaufgaben ein- bzw. ausschalten und ansehen. 
+**Firewall configuration:** In this section you can display the current firewall rules and enable/disable and view a log file for firewall diagnostic tasks. 
 
-**Firewall and NAT rules preconfigured sets:** Das Gateway besitzt einige vordefinierte Firewall-Regeln, z. B. für Anwendungen in einem Fernzugriffs-VPN. Diese Voreinstellungen lassen sich hier aktivieren bzw. an eigene Anforderungen anpassen. Des Weiteren ist unter diesen Einstellmöglichkeiten auch das Hochladen einer Datei mit vollständigen Firewall- und NAT-Regeln möglich vom PC zum Gateway (Upload eines *Firewall and NAT rules script*).  
+**Firewall and NAT rules preconfigured sets:** The gateway has some predefined firewall rules, e.g. for applications in a remote access VPN. These preconfigured sets can be activated here or adapted to your own requirements. Furthermore, under these setting options it is also possible to upload a file with complete firewall and NAT rules from the computer to the gateway (upload of a *firewall and NAT rules script*).
 
-**Formwarding with IP-Masquerading and NAT:** Unter diesem Eintrag lässt sich das NAT-basierte Routing zwischen dem Gateway und dem WAN (Wide Area Network) ein- und ausschalten. 
+**Forwarding with IP-Masquerading and NAT:** Under this entry, NAT-based routing between the gateway and the WAN (Wide Area Network) can be switched on and off. 
 
 ## 4.1 Services > General 
 
