@@ -174,7 +174,7 @@ Beachten Sie bitte, dass die Gateway-Firewall sowohl IPv4 als auch IPv6 unterst�
 
 **Firewall and NAT rules preconfigured sets:** Das Gateway besitzt einige vordefinierte Firewall-Regeln, z. B. für Anwendungen in einem Fernzugriffs-VPN. Diese Voreinstellungen lassen sich hier aktivieren bzw. an eigene Anforderungen anpassen. Des Weiteren ist unter diesen Einstellmöglichkeiten auch das Hochladen einer Datei mit vollständigen Firewall- und NAT-Regeln möglich vom PC zum Gateway (Upload eines *Firewall and NAT rules script*).  
 
-**Formwarding with IP-Masquerading and NAT:** Unter diesem Eintrag lässt sich das NAT-basierte Routing zwischen dem Gateway und dem WAN (Wide Area Network) ein- und ausschalten. 
+**Forwarding with IP-Masquerading and NAT:** Unter diesem Eintrag lässt sich das NAT-basierte Routing zwischen dem Gateway und dem WAN (Wide Area Network) ein- und ausschalten. 
 
 ## 4.1 Services > General 
 
