@@ -215,7 +215,7 @@ DynDNS oder auch DDNS sind Abkürzungen für dynamisches DNS. Dahinter verbirgt 
 
 Das Gateway unterstützt die automatische IP-Adressvergabe per Dynamic Host Configuration Protocol (DHCP) an OT-Baugruppen (DHCP-Client-Baugruppen), die mit einer Gateway-LAN-Schnittstelle verbunden sind. Mit anderen Worten: Das Gateway lässt sich als DHCP-Server nutzen.
 
-**Genral configuration:** Ein- und ausschalten des DHCP-Serverbetriebs.
+**General configuration:** Ein- und ausschalten des DHCP-Serverbetriebs.
 
 **Address range:** Festlegen des IP-Adressbereichs, aus dem IP-Adressen per DHCP an die Client-Baugruppen vergeben werden. 
 
@@ -243,9 +243,9 @@ Das SSV/WebUI Ihres Gateways unterstützt zwei unterschiedliche Benutzerklassen:
 
 **SSV/WebUI configuration:** In diesem Bereich lässt sich das gesamte WebUI ausschalten. Des Weiteren sind verschiedene Konfigurationseinstellungen möglich; z. B. die Wahl zwischen dem ungeschützten HTTP- oder dem sicheren HTTPS-Protokoll, die Auswahl des TCP-Ports für den HTTP- bzw. HTTPS-Zugriff sowie das Erscheinungsbild des SSV/WebUI.    
 
-**Change admin access acount:** Ändern des Benutzernamen und Passwort für den WebUI-Zugriff mit Administratorenrechten (*admin*).
+**Change admin access account:** Ändern des Benutzernamen und Passwort für den WebUI-Zugriff mit Administratorenrechten (*admin*).
 
-**Change user access acount:** Festlegen bzw. verändern des Benutzernamen und Passwort für den WebUI-Zugriff mit eingeschränkten Benutzerrechten (*user*).
+**Change user access account:** Festlegen bzw. verändern des Benutzernamen und Passwort für den WebUI-Zugriff mit eingeschränkten Benutzerrechten (*user*).
 
 ## 5.1 Proxies > Web 
 
