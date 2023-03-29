@@ -86,7 +86,7 @@ Bitte beachten: Der COM1-Port dieses Gateways befindet sich innerhalb des Gehäu
 
 ![Menü: System > Watchdog](https://ssv-comm.de/forum/bilder/938-system_7.png)
 
-Ihr Gateway verfügt über verschiedene Wachdog-Zeitgeber bzw. Watchdog-Zähler, die einen möglichst störungsfreien 24/7-Betrieb gewährleisten sollen. Für diese Watchdogs stehen individuelle Konfigurationseinstellmöglichkeiten zur Verfügung.
+Ihr Gateway verfügt über verschiedene Watchdog-Zeitgeber bzw. Watchdog-Zähler, die einen möglichst störungsfreien 24/7-Betrieb gewährleisten sollen. Für diese Watchdogs stehen individuelle Konfigurationseinstellmöglichkeiten zur Verfügung.
 
 **Enable watchdog service:** Watchdog-Dienste des Gateways ein- oder ausschalten.
 
@@ -259,7 +259,7 @@ Wenn in den Automatisierungsbaugruppen eines OT-Netzwerks HTTP-Server existieren
 
 **Create / edit a redirection entry:** Unter dieser Überschrift wird eine neue Web-Proxy-Verbindung erzeugt. Dafür sind jeweils die folgenden Eingaben erforderlich: 1.) die TCP-Portnummer für den *Listen on port*. 2.) Die IP-Adresse und die Portnummer für den *Relay to*-Part. Des Weiteren muss für einen HTTP-to-HTTPS-Proxy die *Encryption* (also die SSL- bzw. TLS-Funktion) explizit eingeschaltet werden. Ansonsten ergibt sich ein HTTP-to-HTTP-Proxy (also z. B. eine Portumleitung für den externen Webzugriff).
 
-**SSL certificate:** für den HTTP-to-HTTPS-Proxy wird ein Zertifikat benötigt. Dieses Zertifikat lässt sich hier erstellen.
+**SSL certificate:** Für den HTTP-to-HTTPS-Proxy wird ein Zertifikat benötigt. Dieses Zertifikat lässt sich hier erstellen.
 
 ## 5.2 Proxies > DNS 
 
