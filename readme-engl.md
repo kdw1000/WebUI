@@ -180,72 +180,72 @@ Please note that the gateway firewall supports both IPv4 and IPv6. However, both
 
 ![Menü: Services > General](https://ssv-comm.de/forum/bilder/938-services_1.png)
 
-Ihr Gateway besitzt aus Kompatibilitätsgründen mit älteren SSV-Produkten sowohl einen Telnet- als auch FTP-Server. Beide Protokolle gelten inzwischen als unsicher, weil sie auf einer unverschlüsselten Datenübertragung basieren. Insofern sollten diese Protokolle für den Praxiseinsatz des Gateways ausgeschaltet werden.
+Your gateway has both a Telnet and FTP server for compatibility with older SSV products. Both protocols are now considered insecure because they are based on unencrypted data transmission. In this respect, these protocols should be switched off for practical use of the gateway.
 
-**General service configuration:** Hier können Sie den Zugriff per Telnet oder FTP auf das Gateway ein- oder ausschalten. Des Weiteren lässt sich der *Shellinabox*-Service aktivieren bzw. deaktivieren. *Shellinabox* (Shell-in-a-box) ist eine per Webbrowser aufrufbare Webseite, in der Sie über eine Linux-Konsole mit dem Gateway kommunizieren können.    
+**General service configuration:** Here you can enable or disable access to the gateway via Telnet or FTP. Furthermore, the Shellinabox service can be enabled or disabled. Shellinabox (Shell-in-a-box) is a web page that can be accessed via a web browser, in which you can communicate with the gateway via a Linux console.    
 
 ## 4.2 Services > OpenVPN 
 
 ![Menü: Services > OpenVPN](https://ssv-comm.de/forum/bilder/938-services_2a.png)
 ![Menü: Services > OpenVPN](https://ssv-comm.de/forum/bilder/938-services_2b.png)
 
-Ein typisches Anwendungsbeispiel für industrielle Gateways ist der Einsatz in Virtual Private Networks (VPNs), um Fernwartungsanwendungen zu realisieren. Das Gateway bildet dabei einen VPN-Client-Endpunkt und ermöglicht einem Servicetechniker den sicheren Fernzugriff auf die hinter dem Gateway liegenden Baugruppen (z. B. Steuerungen in einem lokalen OT-LAN). In einer solchen Anwendung verbinden sich alle VPN-Clients mit einem zentralen VPN-Server. Ihr Gateway kann gleichzeitig die Verbindungen zu maximal drei externen VPN-Servern aufrechthalten (siehe Reiter *Client 1*, *Client 2* und *Client 3*). Jede Verbindung lässt sich mit unterschiedlichen Zertifikaten einzeln konfigurieren. Darüber hinaus ist das Gateway auch als VPN-Server einsetzbar (siehe Reiter *Server*).
+A typical application example for industrial gateways is their use in virtual private networks (VPNs) to implement remote maintenance applications. Here, the gateway forms a VPN client endpoint and enables a service engineer to securely remotely access the assemblies located behind the gateway (e.g., controllers in a local OT LAN). In such an application, all VPN clients connect to a central VPN server. Your gateway can simultaneously maintain connections to a maximum of three external VPN servers (see tabs *Client 1*, *Client 2* and *Client 3)*. Each connection can be configured individually with different certificates. In addition, the gateway can also be used as a VPN server (see *Server* tab).
 
-**OpenVPN client configuration:** Für jede Client-Verbindung zu einem externen OpenVPN-Server lassen sich hier neben der OpenVPN-Server-IP-Adresse bzw. dem OpenVPN-Server-DNS-Namen unterschiedliche Protokollparameter einstellen. Diese Konfigurationen müssen durch einen entsprechend geschulten Experten erfolgen. Alternativ können Sie sich auch an unseren Support wenden. 
+**OpenVPN client configuration:** For each client connection to an external OpenVPN server, different protocol parameters can be set here in addition to the OpenVPN server IP address or the OpenVPN server DNS name. These configurations have to be done by an appropriately trained expert. Alternatively, you can also contact our support. 
 
-**OpenVPN certificates and keys:** In diesem Bereich erfolgt das Zertifikats- und Schlüsselmanagement für eine VPN-Client-Verbindung, um sich mit dem jeweiligen OpenVPN-Server verbinden zu können.
+**OpenVPN certificates and keys:** In this area, the certificate and key management for a VPN client connection takes place in order to be able to connect to the respective OpenVPN server.
 
 ## 4.3 Services > DynDNS 
 
 ![Menü: Services > DynDNS](https://ssv-comm.de/forum/bilder/938-services_3.png)
 
-Ihr Gateway ermöglicht Anwendungen, in denen es selbst über einen DNS-Namen im Internet erreichbar sein muss. Ein Beispiel wäre der Betrieb als VPN-Server. Da ein solches Gateway in der Regel keine statische IP-Adresse im Internet erhält, lässt sich alternativ DynDNS nutzen.
+Your gateway enables applications in which it must itself be accessible via a DNS name on the Internet. One example would be operation as a VPN server. As such a gateway usually does not receive a static IP address on the Internet, DynDNS can be used as an alternative.
 
-DynDNS oder auch DDNS sind Abkürzungen für dynamisches DNS. Dahinter verbirgt sich eine Technik, um die IP-Adressen einzelner Services im Domain Name System (DNS) dynamisch zu aktualisieren. Der Zweck ist, dass ein Rechnersystem mit einem global erreichbaren Service nach dem Wechsel seiner IP-Adresse automatisch und schnell den dazugehörigen Eintrag im DNS ändert.
+DynDNS or DDNS are abbreviations for dynamic DNS. This is a technique for dynamically updating the IP addresses of individual services in the Domain Name System (DNS). The purpose is that a computer system with a globally accessible service automatically and quickly changes the corresponding entry in the DNS after changing its IP address.
 
-**DynDNS configuration:** Ein- und ausschalten des DynDNS-Service-Updates. Auswahl des DynDNS-Providers, bei dem ein entsprechender Account existiert, sowie des vollständigen Host-Namens (FQDN = Fully-Qualified Domain Name, also ein vollständiger Domain-Name). Des Weiteren lässt sich die Update-Periode einstellen.
+**DynDNS configuration:** Switching the DynDNS service update on and off. Selection of the DynDNS provider with which a corresponding account exists and the complete host name (FQDN = Fully-Qualified Domain Name). Furthermore, the update period can be set.
 
-**Change DynDNS username and password:** Unter dieser Überschrift lässt sich ein neues Passwort für einen Benutzernamen festlegen.
+**Change DynDNS username and password:** Under this heading a new password for a user name can be set.
 
-**Notification to webserver after IP address changes:** Ein- und ausschalten eines Benachrichtigungsdienstes für den Fall, dass sich die IP-Adresse des Gateways im Internet verändert hat.
+**Notification to webserver after IP address changes:** Enable and disable a notification service in case the IP address of the gateway has changed on the Internet.
 
 ## 4.4 Services > DHCP Server 
 
 ![Menü: Services > DHCP Server](https://ssv-comm.de/forum/bilder/938-services_4.png)
 
-Das Gateway unterstützt die automatische IP-Adressvergabe per Dynamic Host Configuration Protocol (DHCP) an OT-Baugruppen (DHCP-Client-Baugruppen), die mit einer Gateway-LAN-Schnittstelle verbunden sind. Mit anderen Worten: Das Gateway lässt sich als DHCP-Server nutzen.
+The gateway supports automatic IP address assignment via Dynamic Host Configuration Protocol (DHCP) to OT modules (DHCP client modules) that are connected to a gateway LAN interface. In other words, the gateway can be used as a DHCP server.
 
-**Genral configuration:** Ein- und ausschalten des DHCP-Serverbetriebs.
+**General configuration:** Switching DHCP server operation on and off.
 
-**Address range:** Festlegen des IP-Adressbereichs, aus dem IP-Adressen per DHCP an die Client-Baugruppen vergeben werden. 
+**Address range:** Specify the IP address range from which IP addresses are assigned to the client modules via DHCP. 
 
 ## 4.5 Services > SNMP 
 
 ![Menü: Services > SNMP](https://ssv-comm.de/forum/bilder/938-services_5.png)
 
-Das Simple Network Management Protocol (SNMP) ist ein Netzwerkprotokoll, das von der IETF entwickelt wurde, um Gateways und andere Netzwerkbaugruppen von einem zentralen Managementsystem aus zu überwachen und bestimmte Parameter verändern zu können. Das Protokoll regelt dabei die Kommunikation zwischen den überwachten Baugruppen und dem Managementsystem.
+The Simple Network Management Protocol (SNMP) is a network protocol developed by the IETF to monitor gateways and other network modules from a central management system and to change certain parameters. The protocol manages the communication between the monitored modules and the management system.
 
-**SNMP configuration:** Ein- und ausschalten des SNMP-Betriebs. Auswahl der SNMP-Version sowie weiterer Parameter.
+**SNMP configuration:** Switching SNMP operation on and off. Selection of the SNMP version and other parameters.
 
 ## 4.6 Services > Remote Access 
 
 ![Menü: Services > Remote Access](https://ssv-comm.de/forum/bilder/938-services_6.png)
 
-**OpenSSH configuration:** Es wird ein SSH-basierter Administratorenzugriff auf das Gateway unterstützt (SSH Secure Shell). Dafür läuft innerhalb des Gateway-Betriebssystems ein OpenSSH-Daemon (SSHD). Hier lässt sich der SSHD ein- und ausschalten sowie konfigurieren. Des Weiteren wird der aktuelle *RSA key fingerprint* angezeigt.  
+**OpenSSH configuration:** SSH-based administrator access to the gateway is supported (SSH Secure Shell). An OpenSSH daemon (SSHD) runs within the gateway operating system for this purpose. The SSHD can be enabled, disabled and configured here. Furthermore, the current RSA key fingerprint is displayed.  
 
-**Change passwort for user "root":** Der SSH-Zugriff auf das Gateway erfolgt grundsätzlich mit Administratorenrechten (User „root“). Das Passwort für diesen Benutzer lässt sich hier ändern. 
+**Change passwort for user "root":** SSH access to the gateway is always performed with administrator rights (user "root"). The password for this user can be changed here. 
 
 ## 4.7 Services > WebUI 
 
 ![Menü: Services > WebUI](https://ssv-comm.de/forum/bilder/938-services_7.png)
 
-Das SSV/WebUI Ihres Gateways unterstützt zwei unterschiedliche Benutzerklassen: 1) einen Administrator (*admin*) mit allen Rechten und 2) einen Benutzer (*user*) mit eingeschränkten Rechten, dem auch nur eine einstellbare Selektivansicht des SSV/WebUI präsentiert wird.
+The SSV/WebUI of your gateway supports two different user classes: 1) an administrator (*admin*) with all rights and 2) a user (*user*) with restricted rights, who is also only presented with an adjustable selective view of the SSV/WebUI.
 
-**SSV/WebUI configuration:** In diesem Bereich lässt sich das gesamte WebUI ausschalten. Des Weiteren sind verschiedene Konfigurationseinstellungen möglich; z. B. die Wahl zwischen dem ungeschützten HTTP- oder dem sicheren HTTPS-Protokoll, die Auswahl des TCP-Ports für den HTTP- bzw. HTTPS-Zugriff sowie das Erscheinungsbild des SSV/WebUI.    
+**SSV/WebUI configuration:** In this area the whole WebUI can be switched off. Furthermore, various configuration settings are possible; e.g. the choice between the unprotected HTTP or the secure HTTPS protocol, the selection of the TCP port for HTTP or HTTPS access as well as the appearance of the SSV/WebUI.    
 
-**Change admin access acount:** Ändern des Benutzernamen und Passwort für den WebUI-Zugriff mit Administratorenrechten (*admin*).
+**Change admin access account:** Change the username and password for WebUI access with administrator rights (*admin*)
 
-**Change user access acount:** Festlegen bzw. verändern des Benutzernamen und Passwort für den WebUI-Zugriff mit eingeschränkten Benutzerrechten (*user*).
+**Change user access account:** Set or change the user name and password for WebUI access with restricted user rights (*user*).
 
 ## 5.1 Proxies > Web 
 
